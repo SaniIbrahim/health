@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import ChildrenList,ChildrenDetail,ChildrenRegister,ChildrenUpdate,ChildrenDelete,AntegenDetail,AntegenAdd
-
+,AntegenDelete,AntegenUpdate
 
 
 urlpatterns = [
