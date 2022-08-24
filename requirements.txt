@@ -4,6 +4,7 @@ distlib==0.3.4
 Django==4.1
 django-cors-headers==3.13.0
 django-crispy-forms==1.14.0
+django-debug-toolbar==3.6.0
 djangorestframework==3.13.1
 filelock==3.4.2
 Flask==2.2.2
