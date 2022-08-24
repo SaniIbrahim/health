@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Log In{%endblock title %}
+{% block content %}
+    <h2 class="justify-center">Log In</h2>
+<div class="modal-body  p-5 pt-0">
+        <form class="form-control" method="post">
+           {% csrf_token %}
+          <div class="form-floating mb-3">
+            {{ form.username|as_crispy_field}}
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.password|as_crispy_field}}
+          </div>
+          <button class="w-100 mb-2 btn btn-lg rounded-4 btn btn-success " type="submit">Log In</button>
+        </form>
+</div>
+{% endblock content %}

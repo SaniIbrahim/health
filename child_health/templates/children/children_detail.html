@@ -1,0 +1,50 @@
+{% extends '_base.html' %}
+{% block title %}Child Detail{% endblock title %}
+{% block content %}
+
+<div class="container">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="{% url 'child_register' %}"class="nav-link active" aria-current="page">Add Child</a></li>
+      <li class="nav-item"><a href="{% url 'child_edit' children.pk %}" class="nav-link active" aria-current="page">Edit Child</a></li>
+      <li class="nav-item"><a href="{% url 'child_delete' children.pk %}" class="nav-link active" aria-current="page">Delete Child</a></li>
+      <li class="nav-item"><a href="{% url 'antegen_antegen' children.pk %}" class="nav-link active" aria-current="page">Child Antegen</a></li>
+    </ul>
+  </header>
+</div>
+
+
+
+   <div class="row mb-3  child_card">
+      <h2 class="intro">Child Information</h2>
+      <div class="col-md-4 themed-grid-col">Ward:</div>
+      <div class="col-md-6 themed-grid-col">{{children.ward}}</div>
+      <div class="col-md-4 themed-grid-col">Card Number:</div>
+      <div class="col-md-6 themed-grid-col">{{children.card_number}}</div>
+      <div class="col-md-4 themed-grid-col">Firt Name:</div>
+      <div class="col-md-6 themed-grid-col">{{children.firs_name}}</div>
+      <div class="col-md-4 themed-grid-col">Certificate number:</div>
+      <div class="col-md-6 themed-grid-col">{{children.certificate_number}}</div>
+      <div class="col-md-4 themed-grid-col">Mother Name:</div>
+      <div class="col-md-6 themed-grid-col">{{children.mother_name}}</div>
+      <div class="col-md-4 themed-grid-col">Father Name:</div>
+      <div class="col-md-6 themed-grid-col">{{children.father_name}}</div>
+      <div class="col-md-4 themed-grid-col">Adress:</div>
+      <div class="col-md-6 themed-grid-col">{{children.address}}</div>
+      <div class="col-md-4 themed-grid-col">Gender:</div>
+      <div class="col-md-6 themed-grid-col">{{children.gender}}</div>
+      <div class="col-md-4 themed-grid-col">Date of Birth:</div>
+      <div class="col-md-6 themed-grid-col">{{children.date_of_birth}}</div>
+    </div>
+    
+    <div class="row mb-3">
+      <h2 class="intro">Clinic Information</h2>
+      <div class="col-md-4 themed-grid-col">Clinic:</div>
+      <div class="col-md-6 themed-grid-col">{{children.clinic}}</div>
+      <div class="col-md-4 themed-grid-col">Local Goverment:</div>
+      <div class="col-md-6 themed-grid-col">{{children.clinic.loca_goverment}}</div>
+      <div class="col-md-4 themed-grid-col">State:</div>
+      <div class="col-md-6 themed-grid-col">{{children.clinic.state}}</div>
+    </div>
+
+{% endblock content %}

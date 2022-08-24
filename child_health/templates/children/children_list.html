@@ -1,0 +1,29 @@
+{%extends '_base.html'%}
+{%block title%}Children List{%endblock title%}
+{%block content%}
+<div class="container">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="{% url 'child_register' %}"class="nav-link active" aria-current="page">Clich Here! To Register New Born Now!</a></li>
+    </ul>
+  </header>
+</div>
+{% if user.is_authenticated %}
+<h4 class="intro">Hi {{ user.username }}! Welcome to Children List Page. </h4>
+
+{%for child in object_list%}
+<div class="card">
+  <div class="card-header">
+  	<h5>
+     <span class="font-weight-bold"><a href="{% url 'child_detail' child.pk %}">{{ child.firs_name }}</a></span>
+      born  on {{ child.date_of_birth }}<span class="text-muted"> registered by {{ child.registrar }} on{{ child.created }} in {{ child.clinic }}</span>
+    </h5>
+  </div>
+{%endfor%}
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}" class="btn btn-outline-secondary">Log In</a> 
+<a href="{% url 'signup' %}" class="btn btn-primary ml-">Sign Up</a>
+{% endif %}
+
+{%endblock content%}
